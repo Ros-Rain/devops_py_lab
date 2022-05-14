@@ -1,11 +1,12 @@
 import os
 import markdown2output_ver_1 as m2o
 
+# путь запуска 
 home_abspath = os.path.dirname(os.path.abspath(__file__))
 
+# путь к рабочим файлам относительно пути запуска
 tmpl_category_file = os.path.abspath(home_abspath + "/../tmpl/category_ver_1.md")
 tmpl_slides_file = os.path.abspath(home_abspath + "/../tmpl/slides_ver_1.md")
-
 out_md_file=os.path.abspath(home_abspath + "/../out/slides_ver_1.md")
 out_pptx_file=os.path.abspath(home_abspath + "/../out/slides_ver_1.pptx")
 
@@ -19,5 +20,6 @@ with open(out_md_file, "w") as out_file:
         with open(f) as in_file:
             out_file.write(in_file.read())
 
+# конвертирование md в pptx
 m2o.convert_to_pptx(out_md_file, out_pptx_file)  # преобразовать в pptx 
 
