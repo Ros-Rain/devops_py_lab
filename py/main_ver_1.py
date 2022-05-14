@@ -1,7 +1,6 @@
 # import data_source_ver_N as ds
 import markdown2output_ver_1.py  as m2o
 
-
 tmpl_category_file="tmpl/category_ver_1.md"
 tmpl_slides_file="tmpl/slides_ver_1.md"
 
