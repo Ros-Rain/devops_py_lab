@@ -1,5 +1,6 @@
 import os
 import markdown2output_ver_1 as m2o
+import file_tools as ft
 
 # путь запуска 
 home_abspath = os.path.dirname(os.path.abspath(__file__))
@@ -11,14 +12,7 @@ out_md_file=os.path.abspath(home_abspath + "/../out/slides_ver_1.md")
 out_pptx_file=os.path.abspath(home_abspath + "/../out/slides_ver_1.pptx")
 
 # объединить файлы в один в директории out
-tmpl_files = []
-tmpl_files.append(tmpl_category_file)
-tmpl_files.append(tmpl_slides_file)
-
-with open(out_md_file, "w") as out_file:
-    for f in tmpl_files:
-        with open(f) as in_file:
-            out_file.write(in_file.read())
+ft.cat_files(out_md_file, tmpl_category_file, tmpl_slides_file)
 
 # конвертирование md в pptx
 m2o.convert_to_pptx(out_md_file, out_pptx_file)  # преобразовать в pptx 
