@@ -1,6 +1,6 @@
 
-## Техника для кухни
+## {category_name}
 
-![](pic/{category_name}.jpeg)
+![](pic/category_{category}.jpeg)
 
 * * * 
