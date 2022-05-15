@@ -3,17 +3,18 @@ import os
 import markdown2output_ver_1 as m2o
 import file_tools as ft
 import format_tools as frmt
-import data_source_ver_4 as ds
+import data_source_ver_5 as ds
 
 # путь запуска 
 home_abspath = os.path.dirname(os.path.abspath(__file__))
 
 # путь к рабочим файлам относительно пути запуска
+csv_file = os.path.abspath(home_abspath + "/../csv/wb.csv")
 tmpl_category_file = os.path.abspath(home_abspath + "/../tmpl/category_ver_4.md")
 tmpl_slides_file = os.path.abspath(home_abspath + "/../tmpl/slides_ver_3.md")
-out_md_file = os.path.abspath(home_abspath + "/../out/slides_ver_4.md")
-out_md_cat_file = os.path.abspath(home_abspath + "/../out/category_ver_4.md")
-out_pptx_file = os.path.abspath(home_abspath + "/../out/slides_ver_4.pptx")
+out_md_file = os.path.abspath(home_abspath + "/../out/slides_ver_5.md")
+out_md_cat_file = os.path.abspath(home_abspath + "/../out/category_ver_5.md")
+out_pptx_file = os.path.abspath(home_abspath + "/../out/slides_ver_5.pptx")
 
 # категории
 category_list = dict(ds.get_categories())
@@ -22,7 +23,7 @@ category_list = dict(ds.get_categories())
 discount_dict = {"Candy":10, "BBK":20}
 
 # продукты
-prod_list = list(ds.get_products())
+prod_list = list(ds.get_products(csv_file))
 
 # сортировка по категориям
 prod_list.sort(key=lambda prod : prod["category"])
