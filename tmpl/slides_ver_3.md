@@ -1,6 +1,7 @@
 ## {model}
 :::::::::::::: {.columns}
 ::: {.column }
+* категория: {category}
 * вендор: {vendor}
 * модель: {model}
 * артикул: {product_id}

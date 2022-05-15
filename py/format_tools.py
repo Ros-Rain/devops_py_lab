@@ -10,7 +10,7 @@ def unmask_curly(match):
     pass
 
 def format_md_text(src_str, value):
-    md_str = re.compile('\{(?!model|vendor|product_id|price|category)[a-z.=0-9 ]+\}', re.IGNORECASE)
+    md_str = re.compile('\{(?!model|vendor|product_id|price|category|discout|discounted_price)[a-z.=0-9 ]+\}', re.IGNORECASE)
     tmp_str = md_str.sub(mask_curly, src_str)
     tmp_str = tmp_str.format_map(value)
     
